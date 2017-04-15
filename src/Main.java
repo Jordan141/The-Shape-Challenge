@@ -6,8 +6,8 @@ import java.math.BigDecimal;
 public class Main {
 
     private static Sphere sphere = new Sphere(BigDecimal.valueOf(1));
-    private static Cube cube = new Cube(BigDecimal.valueOf(5.5));
-    private static Tetrahedron tetrahedron = new Tetrahedron(BigDecimal.valueOf(5.5));
+    private static Cube cube = new Cube(BigDecimal.valueOf(1));
+    private static Tetrahedron tetrahedron = new Tetrahedron(BigDecimal.valueOf(1));
 
     public static void main(String[] args){//TODO clean up repeating code
 
