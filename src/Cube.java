@@ -24,7 +24,8 @@ public class Cube implements Shape {
     }
 
     //Getter for variable
-    public BigDecimal getEdge() {
+    @Override
+    public BigDecimal getUnit() {
         return edge;
     }
 }

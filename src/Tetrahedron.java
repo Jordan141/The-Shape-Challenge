@@ -10,7 +10,7 @@ public class Tetrahedron implements Shape {
     final BigDecimal edge;
 
     //Constructor of class to initialise the variable and instantiate the object.
-    public BigDecimal getEdge() {
+    public BigDecimal getUnit() {
         return edge;
     }
 

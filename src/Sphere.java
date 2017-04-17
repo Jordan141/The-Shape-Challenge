@@ -17,7 +17,8 @@ public class Sphere implements Shape {
     }
 
     //Getter for variable
-    public BigDecimal getRadius() {
+    @Override
+    public BigDecimal getUnit() {
         return radius;
     }
 
