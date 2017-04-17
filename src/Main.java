@@ -18,16 +18,16 @@ public class Main {
 
 
     //Main method, for testing amd output
-    public static void main(String[] args){//TODO clean up repeating code
+    public static void main(String[] args){
 
         for(Shape shape : shapes){//For every shape object in the array of shapes
          output(shape, shape.getUnit().intValueExact());//Output to screen
         }
     }
-    
+
     //Output method, to clear up repeating code
     private static void output(final Shape shape, final int measurement){
-        System.out.format("%s's volume of radius %d: %.2f\n",
+        System.out.format("%s's volume of value %d: %.2f\n",
                     shape.getClass().getSimpleName(),
                     measurement, shape.calculateVolume());
     }
