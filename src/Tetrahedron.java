@@ -8,6 +8,8 @@ public class Tetrahedron implements Shape {
 
     //BigDecimal value for precision
     final BigDecimal edge;
+    private boolean hasBeenRun = false;
+    private BigDecimal volume;
 
     //Constructor of class to initialise the variable and instantiate the object.
     public BigDecimal getUnit() {
@@ -27,12 +29,19 @@ public class Tetrahedron implements Shape {
     @Override
     public BigDecimal calculateVolume() {
 
+        //Avoid unnecessary calculations
+        if(hasBeenRun){
+            return volume;
+        }
+
         //Formula for the volume of a regular tetrahedron is
         // the length to the power of 3 divided by 6 multiplied by the square root of 2.
 
-        BigDecimal volume = BigDecimal.valueOf(//Convert to BigDecimal variables
+        volume = BigDecimal.valueOf(//Convert to BigDecimal variables
                 (Math.pow(edge.doubleValue(), 3)) / (6 * Math.sqrt(2)))
                 .setScale(2, RoundingMode.HALF_UP);
+
+        hasBeenRun = true;
 
         return volume;
     }

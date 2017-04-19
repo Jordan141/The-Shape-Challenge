@@ -8,6 +8,8 @@ public class Cube implements Shape {
 
     //BigDecimal value for precision
     final BigDecimal edge;
+    private boolean hasBeenRun = false;
+    private BigDecimal volume;
 
     //Constructor of class to initialise the variable and instantiate the object.
     public Cube(BigDecimal edge){
@@ -24,9 +26,17 @@ public class Cube implements Shape {
     @Override
     public BigDecimal calculateVolume() {
 
-        return BigDecimal.valueOf(//Convert to BigDecimal variables
+        //Avoid unnecessary calculations
+        if(hasBeenRun){
+            return volume;
+        }
+
+        volume =  BigDecimal.valueOf(//Convert to BigDecimal variables
                 Math.pow(edge.doubleValue(),3)//Formula for a cube is the length to the power of 3
         ).setScale(2, RoundingMode.HALF_UP);//Round to two decimal places.
+
+        hasBeenRun = true;
+        return volume;
     }
 
     //Getter for variable
