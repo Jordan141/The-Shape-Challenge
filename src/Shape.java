@@ -8,4 +8,5 @@ public interface Shape {
 
     BigDecimal getUnit();
     BigDecimal calculateVolume();
+    String toString();
 }

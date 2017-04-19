@@ -16,6 +16,13 @@ public class Sphere implements Shape {
         this.radius = radius;
     }
 
+    public Sphere(Double radius){
+        this.radius = BigDecimal.valueOf(radius);
+    }
+    public Sphere(int radius){
+        this.radius = BigDecimal.valueOf(radius);
+    }
+
     //Getter for variable
     @Override
     public BigDecimal getUnit() {
@@ -31,5 +38,10 @@ public class Sphere implements Shape {
                         .setScale(2, RoundingMode.HALF_UP);//Round to two decimal places.
 
         return sphereVolume;
+    }
+
+    @Override
+    public String toString() {
+        return "This sphere has a radius of " + radius + "cm and a volume of " + calculateVolume() + "cm^3";
     }
 }

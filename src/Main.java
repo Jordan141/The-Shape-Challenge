@@ -5,15 +5,17 @@ import java.math.BigDecimal;
  */
 public class Main {
 
-    private static final int unitOne = 1, unitTwo = 5;
+    private static final double unitOne = 1;//Testing polymorphic constructors
+    private static final int unitTwo = 5;//Testing polymorphic constructors
+
     private static final Shape[] shapes = {
             //Creating and instantiating array of objects
-            new Sphere(BigDecimal.valueOf(unitOne)),
-            new Sphere(BigDecimal.valueOf(unitTwo)),
-            new Cube(BigDecimal.valueOf(unitOne)),
-            new Cube(BigDecimal.valueOf(unitTwo)),
-            new Tetrahedron(BigDecimal.valueOf(unitOne)),
-            new Tetrahedron(BigDecimal.valueOf(unitTwo)),
+            new Sphere(unitOne),
+            new Sphere(unitTwo),
+            new Cube(unitOne),
+            new Cube(unitTwo),
+            new Tetrahedron(unitOne),
+            new Tetrahedron(unitTwo),
     };
 
 
@@ -21,14 +23,7 @@ public class Main {
     public static void main(String[] args){
 
         for(Shape shape : shapes){//For every shape object in the array of shapes
-         output(shape, shape.getUnit().intValueExact());//Output to screen
+            System.out.println(shape.toString());
         }
-    }
-
-    //Output method, to clear up repeating code
-    private static void output(final Shape shape, final int measurement){
-        System.out.format("%s's volume of value %d: %.2f\n",
-                    shape.getClass().getSimpleName(),
-                    measurement, shape.calculateVolume());
     }
 }

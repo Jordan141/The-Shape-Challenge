@@ -13,6 +13,12 @@ public class Cube implements Shape {
     public Cube(BigDecimal edge){
         this.edge = edge;
     }
+    public Cube(double edge){
+        this.edge = BigDecimal.valueOf(edge);
+    }
+    public Cube(int edge){
+        this.edge = BigDecimal.valueOf(edge);
+    }
 
     //Override super method
     @Override
@@ -27,5 +33,10 @@ public class Cube implements Shape {
     @Override
     public BigDecimal getUnit() {
         return edge;
+    }
+
+    @Override
+    public String toString() {
+        return "This cube has an edge of " + edge + "cm and a volume of " + calculateVolume() + "cm^3";
     }
 }

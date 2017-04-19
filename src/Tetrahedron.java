@@ -18,6 +18,12 @@ public class Tetrahedron implements Shape {
     public  Tetrahedron(BigDecimal edge){
         this.edge = edge;
     }
+    public Tetrahedron(double edge){
+        this.edge = BigDecimal.valueOf(edge);
+    }
+    public Tetrahedron(int edge){
+        this.edge = BigDecimal.valueOf(edge);
+    }
     @Override
     public BigDecimal calculateVolume() {
 
@@ -29,5 +35,9 @@ public class Tetrahedron implements Shape {
                 .setScale(2, RoundingMode.HALF_UP);
 
         return volume;
+    }
+    @Override
+    public String toString() {
+        return "This regular tetrahedron has an edge of " + edge + "cm and a volume of " + calculateVolume() + "cm^3";
     }
 }
